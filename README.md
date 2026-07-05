@@ -1,0 +1,2 @@
+# vigilnetra
+Ai Scam detector
