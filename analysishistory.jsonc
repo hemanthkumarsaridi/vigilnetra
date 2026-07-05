@@ -1,0 +1,48 @@
+{
+  "name": "AnalysisHistory",
+  "type": "object",
+  "properties": {
+    "input_type": {
+      "type": "string",
+      "enum": ["SMS", "Email", "URL", "Document", "Image", "WhatsApp", "Call", "Other"]
+    },
+    "content": {
+      "type": "string",
+      "description": "The text content that was analyzed"
+    },
+    "risk_level": {
+      "type": "string",
+      "enum": ["safe", "low", "medium", "high", "critical"],
+      "description": "AI-determined risk level"
+    },
+    "category": {
+      "type": "string",
+      "enum": ["normal", "educational", "nature", "scam", "phishing", "spam", "suspicious", "safe"]
+    },
+    "analysis_result": {
+      "type": "string",
+      "description": "Full AI analysis text"
+    },
+    "is_scam": {
+      "type": "boolean",
+      "default": false
+    },
+    "confidence": {
+      "type": "number",
+      "description": "AI confidence score 0-1"
+    },
+    "file_url": {
+      "type": "string",
+      "description": "URL of uploaded file if applicable"
+    },
+    "cautions": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "actions": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "required": ["input_type", "risk_level"]
+}
